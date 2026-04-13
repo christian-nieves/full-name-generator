@@ -16,7 +16,12 @@ public class FullNameApplication {
         System.out.println("Middle name: "); // Asking user for middle name
         String middleName = myScanner.nextLine().trim(); // Storing middle name
 
-        middleName = middleName.substring(0, 1).toUpperCase() + middleName.substring(1); // Capitalizes the first letter of middle name
+        if (!middleName.isEmpty()) {
+        middleName = middleName.substring(0, 1).toUpperCase() + middleName.substring(1);// Capitalizes the first letter of middle name
+        middleName = middleName.charAt(0) + ".";
+            }
+
+
 
         System.out.println("Last name: "); // Asking user for last name
         String lastName = myScanner.nextLine().trim(); // Storing last name
@@ -26,9 +31,12 @@ public class FullNameApplication {
         System.out.println("Suffix: "); // Asking user for suffix
         String suffix = myScanner.nextLine().trim(); // Storing suffix
 
-        suffix = suffix.substring(0, 1).toUpperCase() + suffix.substring(1); // Capitalizes the first letter of suffix
+        if (!suffix.isEmpty()) {
+            suffix = suffix.substring(0, 1).toUpperCase() + suffix.substring(1); // Capitalizes the first letter of suffix
+        }
 
         String fullName = (firstName + " " + middleName + " " + lastName + ", " + suffix); // Making a variable for the full name
+
 
         if (middleName.isEmpty() && suffix.isEmpty()) {
             fullName = (firstName + " " + lastName); // Removing middle and suffix if left blank
